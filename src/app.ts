@@ -8,7 +8,7 @@ import router from "./app/routes";
 const app: Application = express();
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "http://localhost:3001",
     credentials: true,
   })
 );
@@ -21,9 +21,9 @@ app.use("/api", router);
 
 app.get("/", (req: Request, res: Response) => {
   res.send({
-    message: "Server is running successfully!",
+    message: "Server is running..",
     environment: config.node_env,
-    uptime: process.uptime().toFixed(2) + " seconds",
+    uptime: process.uptime().toFixed(2) + " sec",
     timeStamp: new Date().toISOString(),
   });
 });
