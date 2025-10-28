@@ -2,7 +2,7 @@ import { UserStatus } from "@prisma/client";
 import { prisma } from "../../shared/prisma";
 import bcrypt from "bcryptjs";
 import { jwtHelper } from "../../helper/jwtHelper";
-import ApiError from "../../errors/apiErrors";
+import ApiError from "../../errors/ApiErrors";
 import httpStatus from "http-status";
 
 const login = async (payload: { email: string; password: string }) => {
