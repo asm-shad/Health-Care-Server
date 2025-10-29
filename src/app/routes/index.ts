@@ -23,6 +23,10 @@ const moduleRoutes = [
     path: "/doctor-schedule",
     route: doctorScheduleRoutes,
   },
+  {
+    path: "/appointment",
+    route: doctorScheduleRoutes,
+  },
 ];
 
 moduleRoutes.forEach((route) => router.use(route.path, route.route));
