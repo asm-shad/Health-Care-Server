@@ -3,6 +3,14 @@ import { userRoutes } from "../modules/user/user.routes";
 import { authRoutes } from "../modules/auth/auth.routes";
 import { ScheduleRoutes } from "../modules/schedule/schedule.routes";
 import { doctorScheduleRoutes } from "../modules/doctorSchedule/doctorSchedule.routes";
+import { DoctorRoutes } from "../modules/doctor/doctor.routes";
+import { AdminRoutes } from "../modules/admin/admin.routes";
+import { PatientRoutes } from "../modules/patient/patient.routes";
+import { AppointmentRoutes } from "../modules/appointment/appointment.routes";
+import { PrescriptionRoutes } from "../modules/prescription/prescription.routes";
+import { ReviewRoutes } from "../modules/review/review.routes";
+import { MetaRoutes } from "../modules/meta/meta.routes";
+import { SpecialtiesRoutes } from "../modules/specialities/specialities.routes";
 
 const router = express.Router();
 
@@ -24,8 +32,36 @@ const moduleRoutes = [
     route: doctorScheduleRoutes,
   },
   {
+    path: "/specialties",
+    route: SpecialtiesRoutes,
+  },
+  {
+    path: "/doctor",
+    route: DoctorRoutes,
+  },
+  {
+    path: "/admin",
+    route: AdminRoutes,
+  },
+  {
+    path: "/patient",
+    route: PatientRoutes,
+  },
+  {
     path: "/appointment",
-    route: doctorScheduleRoutes,
+    route: AppointmentRoutes,
+  },
+  {
+    path: "/prescription",
+    route: PrescriptionRoutes,
+  },
+  {
+    path: "/review",
+    route: ReviewRoutes,
+  },
+  {
+    path: "/metadata",
+    route: MetaRoutes,
   },
 ];
 

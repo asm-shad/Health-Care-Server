@@ -1,9 +1,9 @@
-import { Secret } from "jsonwebtoken";
-import httpStatus from "http-status";
 import { NextFunction, Request, Response } from "express";
 import { jwtHelper } from "../helper/jwtHelper";
-import ApiError from "../errors/ApiErrors";
+import httpStatus from "http-status";
 import config from "../../config";
+import { Secret } from "jsonwebtoken";
+import ApiError from "../errors/ApiErrors";
 
 const auth = (...roles: string[]) => {
   return async (
@@ -12,7 +12,7 @@ const auth = (...roles: string[]) => {
     next: NextFunction
   ) => {
     try {
-      const token = req.cookies.accessToken || req.cookies?.accessToken;
+      const token = req.cookies.accessToken;
 
       if (!token) {
         throw new ApiError(httpStatus.UNAUTHORIZED, "You are not authorized!");
